@@ -72,7 +72,7 @@ const TypingGameDemo: FC<{ text: string }> = ({ text }) => {
                 }}
                 tabIndex={0}
             >
-                <pre className='text-center mt-6'>
+                <pre className='mt-6'>
                     {text.split("").map((char: string, index: number) => {
                         let state = charsState[index];
                         let color =

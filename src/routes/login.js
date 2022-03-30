@@ -18,28 +18,34 @@ const Login = () => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({username, password})
-        }).then((response) => {
-            console.log(response)
-            console.log(response.data.message)
-            let userId = response.data.userId
+        })
+        .then((response) => response.json())
+        .then(data => {
+            console.log(data)
+            console.log(data.message)
+            let userId = data.userId
+            console.log(userId)
             sessionStorage.setItem("userId", JSON.stringify(userId))
-            if (response.status === 200) {
+            if (data.message === "You are logged in!") {
                 setLoginStatus("Login Success");
             }
         })
     };
 
-
-
     async function Register({ credentials }) {
-        Axios.post("https://typescripts-server.herokuapp.com/users/register", {
-            username: username,
-            password: password
-        }).then((response) => {
-            console.log(response)
-            if (response.status === 200) {
-
-                setLoginStatus("Registered Successfully, Please Login");
+        fetch("https://typescripts-server.herokuapp.com/users/register", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({username, password})
+        })
+        .then((response) => response.json())
+        .then(data => {
+            console.log(data)
+            if (data.id) {
+                console.log('Registered Successfully')
+                setLoginStatus("Registered Successfully");
                 Login({username, password})
             }
         })

@@ -3,15 +3,16 @@ import axios from 'axios'
 import Table from '../components/table'
 
 const HighScore = () => {
+    
     const [highscores, setHighscores] = useState([])
 
     const getScores = () => {
-        axios.get('https://typescripts-server.herokuapp.com/api/highscores', {})
-            .then((response) => {
-                console.log(response.data)
-                let scores = response.data
-                return scores
-            }).then((scores) => {
+        fetch("https://typescripts-server.herokuapp.com/api/highscores")
+        .then((response) => response.json())
+        .then(data => {
+            let scores = data
+            return scores
+            }).then(scores=> {
                 setHighscores(scores)
             })
     }
