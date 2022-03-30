@@ -3,7 +3,10 @@ const Results = (props) => {
     let score = props.speed * (props.accuracy / 100) * 10
 
     let userSessionId = sessionStorage.getItem("userId")
+    
+    if (userSessionId) {
     let userId = userSessionId.replace(/['"]+/g, '');
+    }
 
     console.log(userId)
     console.log(props.phase)
