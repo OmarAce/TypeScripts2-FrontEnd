@@ -1,35 +1,29 @@
-
-import Axios from 'axios'
 const Results = (props) => {
+
     const score = props.speed * (props.accuracy / 100) * 10
-
-
-    //only at end of game
-
-    // props.phase === 'Ended' && {
-
-    //     //post route to highscores
-    //     const scorePost = async () => {
-    //         await Axios.post("http://localhost:3001/highscores", {
-    //             score: score,
-    //         }).then()
-    //     }
-
-    // }
     let userId = sessionStorage.getItem("userId")
-    console.log(userId)
-    console.log(props.phase)
-    console.log(props)
-    if (props.phase === 'Ended' && userId) {
-        Axios.post("https://typescripts-server.herokuapp.com/highscores", {
-            score: score,
-        }).then((response) => {
-            console.log(response, 'score posted')
-            if (response.status === 200) {
 
-            }
+    if (props.phase === 'Ended' && userId) {
+        // Axios.post("https://typescripts-server.herokuapp.com/highscores", {
+        //     score: score,
+        // }).then((response) => {
+        //     console.log(response, 'score posted')
+        //     if (response.status === 200) {
+        //     }
+        // })
+
+        fetch("https://typescripts-server.herokuapp.com/highscores", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ "score": score })
         })
-        console.log(props)
+        .then((res) => res.json())
+        .then(highscoredata => {
+            console.log(highscoredata)
+            console.log(highscoredata.message)
+        })
     }
     return (
         <>
