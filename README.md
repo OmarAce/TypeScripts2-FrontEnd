@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# TYPESCRIPTS 2.0
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Available Scripts
+## Objective
 
-In the project directory, you can run:
+Refactor our previous [TypeScripts](https://github.com/Kam-Mivehchi/TypeScripts) application from a handlebarsjs build into a more modern react framework. TypeScripts is an application where the user is able to practice their typing speed and accuracy while learning/practicing coding languages at the same time. In the current build, the user is able to practice, Typescripts, Javascript, HTML, CSS, and plain english.
 
-### `npm start`
+![Typing Game Homepage](assets/homepage.png)
+![Typing Game Image](assets/game-demo.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Typing Demo:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Typing Game Demo](assets/TypeScripts.gif)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ## Table of Contents 
+- [Objective](#objective)
+- [License](#license)
+- [Description](#description)
+- [Deployment](#deployment)
+- [Githubs](#githubs)
 
-### `npm run build`
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Description
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+TypeScripts is a typing game for all developers, new and experienced alike; where users are able to see their typing skills when typing code. We noticed that a lot of the typing quizes or games didn't offer developer modes where you can type code instead of random words and sentences and sought to provide a solution in the form of TypeSCripts. This being our very first full stack development project, we learned a lot about technical skills and social skills when working in a team.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Deployment
 
-### `npm run eject`
+https://typescripts-react.herokuapp.com/
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Note
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This TypeScripts build is a decoupled set up, with the server repository location [here](https://github.com/OmarAce/TypeScripts2-Backend). There is also a development build that utilized concurrently for client/server testing with a large majority of the commit history [here](https://github.com/Kam-Mivehchi/TypeScripts-2).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Built With
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Node.js](https://nodejs.org/en/)
+* [React.js](https://reactjs.org/)
+* [DOTENV](https://www.npmjs.com/package/dotenv)
+* [bcrypt](https://www.npmjs.com/package/bcrypt)
+* [Express](https://www.npmjs.com/package/express)
+* [Sequelize](https://sequelize.org/)
 
-## Learn More
+## Authors
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Contributors names and contact info:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* [Kamyar](https://github.com/Kam-Mivehchi)
+* [Omar](https://github.com/OmarAce)
