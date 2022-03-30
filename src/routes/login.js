@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Axios from 'axios'
 import Type from './type';
 import { Navigate } from 'react-router';
 const Login = () => {
@@ -8,8 +7,6 @@ const Login = () => {
     const [password, setPassword] = useState("");
 
     const [loginStatus, setLoginStatus] = useState("Please Log In");
-
-    Axios.defaults.withCredentials = true;
 
     async function Login({ credentials }) {
         fetch("https://typescripts-server.herokuapp.com/users/login", {

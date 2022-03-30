@@ -41,7 +41,6 @@ const TypingGameDemo: FC<{ text: string }> = ({ text }) => {
 
     const handleKey = (key: any) => {
 
-        console.log(key)
         if (key === "Escape") {
             resetTyping();
             return;

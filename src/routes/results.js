@@ -1,30 +1,33 @@
 const Results = (props) => {
+    
+    let score = props.speed * (props.accuracy / 100) * 10
 
-    const score = props.speed * (props.accuracy / 100) * 10
-    let userId = sessionStorage.getItem("userId")
+    let userSessionId = sessionStorage.getItem("userId")
+    let userId = userSessionId.replace(/['"]+/g, '');
+
+    console.log(userId)
+    console.log(props.phase)
+    console.log(props)
+  
+    async function postScore({ credentials }) {
+        fetch("https://typescripts-server.herokuapp.com/highscores", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({userId: userId, score})
+            })
+            .then((response) => response.json())
+            .then(data => {
+                console.log(data)
+                console.log(data.message)
+            })
+        };
 
     if (props.phase === 'Ended' && userId) {
-        // Axios.post("https://typescripts-server.herokuapp.com/highscores", {
-        //     score: score,
-        // }).then((response) => {
-        //     console.log(response, 'score posted')
-        //     if (response.status === 200) {
-        //     }
-        // })
-
-        fetch("https://typescripts-server.herokuapp.com/highscores", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ "score": score })
-        })
-        .then((res) => res.json())
-        .then(highscoredata => {
-            console.log(highscoredata)
-            console.log(highscoredata.message)
-        })
+    postScore({userId, score})
     }
+
     return (
         <>
             <div className=" flex flex-col mt-12">
