@@ -12,9 +12,12 @@ const Login = () => {
     Axios.defaults.withCredentials = true;
 
     async function Login({ credentials }) {
-        Axios.post("https://typescripts-server.herokuapp.com/users/login", {
-            username: username,
-            password: password
+        fetch("https://typescripts-server.herokuapp.com/users/login", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({username, password})
         }).then((response) => {
             console.log(response)
             console.log(response.data.message)
@@ -25,6 +28,8 @@ const Login = () => {
             }
         })
     };
+
+
 
     async function Register({ credentials }) {
         Axios.post("https://typescripts-server.herokuapp.com/users/register", {
