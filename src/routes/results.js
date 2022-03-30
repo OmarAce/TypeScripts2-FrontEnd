@@ -2,23 +2,20 @@ const Results = (props) => {
     
     let score = props.speed * (props.accuracy / 100) * 10
 
-    let userSessionId = sessionStorage.getItem("userId")
-    
-    if (userSessionId) {
-    let userId = userSessionId.replace(/['"]+/g, '');
-    }
+    let userId = sessionStorage.getItem("userId")
 
     console.log(userId)
     console.log(props.phase)
     console.log(props)
   
     async function postScore({ credentials }) {
+        let idClean = userId.replace(/['"]+/g, '');
         fetch("https://typescripts-server.herokuapp.com/highscores", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({userId: userId, score})
+                body: JSON.stringify({userId: idClean, score})
             })
             .then((response) => response.json())
             .then(data => {
