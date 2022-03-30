@@ -21,7 +21,7 @@ const Results = (props) => {
     console.log(props.phase)
     console.log(props)
     if (props.phase === 'Ended' && userId) {
-        Axios.post("http://localhost:3001/highscores", {
+        Axios.post("https://typescripts-server.herokuapp.com/highscores", {
             score: score,
         }).then((response) => {
             console.log(response, 'score posted')

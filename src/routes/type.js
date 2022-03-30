@@ -22,7 +22,7 @@ const Type = () => {
 
         const userLang = e.target.innerText.toLowerCase()
 
-        let languageSearch = "/prompts/" + userLang;
+        let languageSearch = "https://typescripts-server.herokuapp.com/prompts/" + userLang;
 
         fetch(languageSearch, {})
             .then((response) => {

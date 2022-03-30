@@ -12,7 +12,7 @@ const Login = () => {
     Axios.defaults.withCredentials = true;
 
     async function Login({ credentials }) {
-        Axios.post("http://localhost:3001/users/login", {
+        Axios.post("https://typescripts-server.herokuapp.com/users/login", {
             username: username,
             password: password
         }).then((response) => {
@@ -27,7 +27,7 @@ const Login = () => {
     };
 
     async function Register({ credentials }) {
-        Axios.post("http://localhost:3001/users/register", {
+        Axios.post("https://typescripts-server.herokuapp.com/users/register", {
             username: username,
             password: password
         }).then((response) => {

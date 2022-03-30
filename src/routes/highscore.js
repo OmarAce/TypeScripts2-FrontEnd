@@ -6,7 +6,7 @@ const HighScore = () => {
     const [highscores, setHighscores] = useState([])
 
     const getScores = () => {
-        axios.get('http://localhost:3001/api/highscores', {})
+        axios.get('https://typescripts-server.herokuapp.com/api/highscores', {})
             .then((response) => {
                 console.log(response.data)
                 let scores = response.data
