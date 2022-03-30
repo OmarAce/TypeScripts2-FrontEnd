@@ -6,6 +6,7 @@ import useTypingGame, {
 import Type from './type'
 import "./styles.css";
 import Results from './results'
+
 let Color = require('color');
 
 const TypingGameDemo: FC<{ text: string }> = ({ text }) => {

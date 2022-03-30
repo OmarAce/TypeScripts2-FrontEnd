@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Twirl as Hamburger } from 'hamburger-react'
-
+import { FaCrown, FaKeyboard } from 'react-icons/fa';
 const Navigation = () => {
     const [isOpen, setOpen] = useState(false)
 
@@ -16,8 +16,10 @@ const Navigation = () => {
                     <Link className='mx-1 text-3xl font-black text-pink-500' to="/">2.0</Link>
                 </div>
                 <div className='flex  text-2xl h-full font-medium' id="navLinks">
-                    <Link className='mx-6 my-2 hover:-translate-y-1 hover:scale-110 hover:text-indigo-500 duration-300' to="/type">Type!</Link>
-                    <Link className='mx-6 my-2 hover:-translate-y-1 hover:scale-110 hover:text-indigo-500 duration-300' to="/highscore">Highscores</Link>
+                    <Link className='mx-6 my-2 hover:-translate-y-1 hover:scale-110 hover:text-indigo-500 duration-300 flex items-center' to="/type">Type
+                        <span className='ml-2 mt-1'><FaKeyboard /></span> </Link>
+                    <Link className='mx-6 my-2 hover:-translate-y-1 hover:scale-110 hover:text-indigo-500 duration-300 flex items-center' to="/highscore">Highscores
+                        <span className='ml-2'><FaCrown /></span></Link>
                     <Link className='ml-4 bg-pink-500 mt-2 animate-[bounce_3s_infinite] hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 px-6 pt-1 rounded text-xl' to="/login">Login</Link>
                 </div>
 
