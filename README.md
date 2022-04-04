@@ -4,7 +4,7 @@
 
 ## Objective
 
-Refactor our previous [TypeScripts](https://github.com/Kam-Mivehchi/TypeScripts) application from a handlebarsjs build into a more modern react framework. TypeScripts is an application where the user is able to practice their typing speed and accuracy while learning/practicing coding languages at the same time. In the current build, the user is able to practice, Typescripts, Javascript, HTML, CSS, and plain english.
+Our goal was to refactor our previous [TypeScripts](https://github.com/Kam-Mivehchi/TypeScripts) application from a handlebarsjs build into a more modern react framework. TypeScripts is an application where the user is able to practice their typing speed and accuracy while learning/practicing coding languages at the same time. In the current build, the user is able to practice, Typescripts, Javascript, HTML, CSS, and plain english.
 
 ![Typing Game Homepage](assets/homepage.png)
 ![Typing Game Image](assets/game-demo.png)
