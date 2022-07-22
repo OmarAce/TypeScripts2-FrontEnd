@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
-import Test from './test'
+
 import Test2 from './test2.tsx'
+import Navbar from '../components/navigation'
 const Type = () => {
     const language = ['English', 'TypeScript', 'CSS', 'HTML', 'JavaScript']
     // const prompts = {
@@ -53,12 +54,14 @@ const Type = () => {
     const [stage, setStage] = useState(home)
 
     return (
-
-        <div className='grid  grid-rows-6 gap-4 '>
-            <div id="prompt" className=" row-span-3 text-center flex flex-col justify-center items-center ">
-                {stage}
-            </div>
-        </div >
+        <>
+            <Navbar />
+            <div className='grid  grid-rows-6 gap-4 '>
+                <div id="prompt" className=" row-span-3 text-center flex flex-col justify-center items-center ">
+                    {stage}
+                </div>
+            </div >
+        </>
     )
 }
 

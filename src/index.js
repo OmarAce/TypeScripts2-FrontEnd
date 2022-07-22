@@ -18,7 +18,7 @@ ReactDOM.render(
         <Route path='login' element={<Login />} />
         <Route path='highscore' element={<Highscore />} />
       </Route>
-      
+
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')

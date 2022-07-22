@@ -1,9 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Twirl as Hamburger } from 'hamburger-react'
 import { FaCrown, FaKeyboard } from 'react-icons/fa';
 const Navigation = () => {
     const [isOpen, setOpen] = useState(false)
+    const [user, setUser] = useState(sessionStorage.getItem("userId"))
+    useEffect(() => {
+        const loggedInUser = sessionStorage.getItem("userId");
+        if (loggedInUser) {
+            const foundUser = JSON.parse(loggedInUser);
+            console.log(foundUser)
+
+            setUser(foundUser);
+        }
+    }, [user]);
+
+
+
 
     return (
         <>
@@ -20,7 +33,8 @@ const Navigation = () => {
                         <span className='ml-2 mt-1'><FaKeyboard /></span> </Link>
                     <Link className='mx-6 my-2 hover:-translate-y-1 hover:scale-110 hover:text-indigo-500 duration-300 flex items-center' to="/highscore">Highscores
                         <span className='ml-2'><FaCrown /></span></Link>
-                    <Link className='ml-4 bg-pink-500 mt-2 animate-[bounce_3s_infinite] hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 px-6 pt-1 rounded text-xl' to="/login">Login</Link>
+                    <Link className={`ml-4 bg-pink-500 mt-2 animate-[bounce_3s_infinite] hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 px-6 pt-1 rounded text-xl ${user && 'hidden'}`} to="/login">Login</Link>
+                    <button className={`mx-1 px-3  mt-1 text-xl rounded text-pink-500 ${!user && 'hidden'}`} >Logged In</button>
                 </div>
 
             </nav>
@@ -32,7 +46,8 @@ const Navigation = () => {
                 </div>
 
                 <div className="flex items-center" >
-                    <Link className='mx-1 px-3  mt-1 font-black bg-pink-500 rounded animate-[bounce_3s_infinite]' to="/login">Login</Link>
+                    <Link className={`mx-1 px-3  mt-1 font-black bg-pink-500 rounded animate-[bounce_3s_infinite] ${user && 'hidden'}`} to="/login">Login</Link>
+                    <button className={`mx-1 px-3  mt-1 text-xl rounded  ${!user && 'hidden'}`} >You are logged in</button>
 
                     <Hamburger className="" toggled={isOpen} toggle={setOpen} onToggle={toggled => {
                         if (toggled) {
